@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div style="width: 100%">
+      <div
+        style="
+          background-color: #eceef1;
+          width: 80%;
+          justify-content: center;
+          justify-self: center;
+          margin: auto;
+          padding: 10px 10px 50px 10px;
+          font-family: 'Times New Roman', Times, serif;
+          color: black;
+        "
+      >
+        <h1>
+          <img
+            src="https://res.cloudinary.com/dj6eghdzu/image/upload/v1652952141/Vector_1_dmzwqw.png"
+            width="25px"
+            alt="logo"
+          />
+          TrackGenesis
+        </h1>
+        <div
+          style="
+            background-color: rgb(252, 252, 253);
+            color: black;
+            width: 70%;
+            height: 60%;
+            justify-self: center;
+            margin: auto;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 0px;
+          "
+        >
+          <div
+            style="
+              background-color: #290568;
+              padding: 5px;
+              justify-content: center;
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 0px;
+                color: white;
+              "
+            >
+              Welcome to Supply Chain platform
+            </p>
+            <br />
+          </div>
+          <p style="font-size: 18px; font-weight: bold; margin-bottom: 0px">
+            Greetings to {{firstName}} {{lastName}},
+          </p>
+          <p>
+            You are successfully onboarded to the Supply Chain platform.To help
+            you get started, here are the login credentials
+          </p>
+          <p
+            style="
+              margin-left: 20px;
+              font-size: 16px;
+              font-weight: bold;
+              text-align: center;
+              line-height: 25px;
+            "
+          >
+            Email ID: {{login_email}}<br />
+            Temporary Password: {{login_password}}
+          </p>
+          <p>
+            Please note that this is a temporary password and should be changed
+            immediately upon logging in for security reasons.
+          </p>
+
+          <div
+            style="
+              align-items: right;
+              justify-content: center;
+              margin-left: 40%;
+            "
+          >
+            <button
+              style="
+                background-color: #148eff;
+                border: none;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                padding: 8px;
+                margin: 20px;
+                color: white;
+              "
+            >
+              <a
+                href="{{login_link}}"
+                style="text-decoration: none; color: white"
+              >
+                Sign In to the Application</a
+              >
+            </button>
+          </div>
+        </div>
+        <div
+          style="
+            width: 75%;
+            margin: 0px auto 0px auto;
+            font-size: small;
+            color: rgba(128, 128, 128, 0.744);
+            text-align: justify;
+            color: black;
+          "
+        >
+          <p>
+            You are receiving this email because {{login_email}} is registered
+            to the Supply Chain platform. Please do not reply directly to this
+            email. If you have any questions or feedback, please visit our
+            <a
+              href="https://trackgenesis.com/home"
+              style="text-decoration: none; color: navy"
+              >support site</a
+            >.
+          </p>
+          <p>
+            Copyright (c) {{year}} TrackGenesis Limited | 6 International
+            Avenue, Cirrus Building, ABZ Business Park Aberdeen, United Kingdom,
+            AB21 0BH.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

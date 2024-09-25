@@ -1,0 +1,35 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "requireConfigFile": false,
+    "sourceType": "module"
+  },
+  "extends": ["prettier"],
+  "plugins": ["prettier", "node"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "ignores": ["modules"]
+      }
+    ],
+    "node/no-missing-import": [
+      "error",
+      {
+        "tryExtensions": [".js", ".json", ".node"]
+      }
+    ],
+    "no-console": ["error", { "allow": ["info", "error"] }]
+  }
+}
