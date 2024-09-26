@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import Client from '../models/client.model.js';
-// todo:auth setup for all stakeholders
 const client = async (req, res, next) => {
   let token;
   if (req.headers.authorization) {

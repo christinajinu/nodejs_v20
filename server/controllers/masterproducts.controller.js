@@ -16,10 +16,8 @@ export const createProduct = async (req, res) => {
       process: productProcess,
     } = req.body;
     const processArray = JSON.parse(productProcess);
-    // console.log(req.body.process);
     const uniquePID = uuidv4();
     const creatorId = req.client._id;
-    // console.log(creatorId);
     if (!creatorId) {
       return res.status(400).json({
         status: 'warning',

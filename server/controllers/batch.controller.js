@@ -219,7 +219,6 @@ export const createandpreviewBatch = async (req, res) => {
     }
 
     const duplicateId = await findBatchFromDB(uniqueId);
-    // console.log(duplicateId);
 
     if (
       functionality === 'add' &&
@@ -559,33 +558,6 @@ export const getRegistrarBatches = async (req, res) => {
     });
   }
 };
-
-// get batches created by stakeholders viewed by  client's/above
-// exports.getRegistrarBatches = async (req, res) => {
-//   try {
-//     const id = req.client._id;
-//     const myBatch = await Batch.find({ registrarId: id });
-//     if (!myBatch) {
-//       return res.status(404).json({
-//         status: 'error',
-//         message:
-//           "couldn't find batch details, please try again after sometime.",
-//       });
-//     }
-//     res.status(200).json({
-//       status: 'success',
-//       message: 'Batches of registered  fetched successfully.',
-//       data: myBatch,
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({
-//       status: 'error',
-//       message: 'Error while retrieving data',
-//       error,
-//     });
-//   }
-// };
 
 // get my batches
 export const myBatches = async (req, res) => {

@@ -71,22 +71,11 @@ export const registerAdmin = async (req, res) => {
         template: 'welcome.html',
         data: emailData,
       });
-      // const APIkey = await generateToken(admin._id);
-      // const updatedAPIKey = await Client.findByIdAndUpdate(
-      //   admin._id,
-      //   { APIKey: APIkey, adminId: admin._id },
-      //   {
-      //     new: true,
-      //     runValidators: true,
-      //   }
-      // );
-      // if (updatedAPIKey) {
       return res.status(200).json({
         status: 'success',
         message: 'Admin added Successfully',
         adminData: admin,
       });
-      // }
     }
     return res
       .status(400)
@@ -165,9 +154,6 @@ export const registerClient = async (req, res) => {
       role,
     } = req.body;
     const registrarId = req.client._id;
-    // const adminId = req.client.adminId;
-    // const APIKey = req.client.APIKey;
-    // const rank = req.client.role;
     if (
       !companyName ||
       !firstName ||
@@ -212,7 +198,6 @@ export const registerClient = async (req, res) => {
     });
     if (client) {
       const emailData = {
-        // todo:login link
         login_link: `${url}/login`,
         year: new Date().getFullYear(),
         login_password: password,
@@ -753,23 +738,3 @@ export const getClientEmail = async (req, res) => {
     });
   }
 };
-
-// export default{
-//   // registerAdmin,
-//   registerClient,
-//   clientExist,
-//   clientLogin,
-//   deleteClient,
-//   getAllClients,
-//   getRegisteredUsers,
-//   getCompanies,
-//   getMe,
-//   updateClient,
-//   updatePassword,
-//   forgotPassword,
-//   resetPassword,
-//   passwordReset,
-//   getUsers,
-//   sendAlertMail,
-//   getClientEmail,
-// };

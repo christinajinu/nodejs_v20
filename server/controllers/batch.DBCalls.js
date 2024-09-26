@@ -2,51 +2,7 @@ import batchModel from '../models/batch.model.js';
 import productModel from '../models/masterProducts.model.js';
 export const findProductName = async (productId) =>
   productModel.find({ _id: productId });
-// const saveBatchToDB = async (
-//   registrarId,
-//   creatorId,
-//   adminId,
-//   companyId,
-//   uniqueId,
-//   batchId,
-//   productId,
-//   productName,
-//   dynamicData,
-//   batchesUsed,
-//   batchNames,
-//   uploadedImage,
-//   uploadedDocFiles,
-//   activityStatus,
-//   blockNumber,
-//   hash,
-//   blockHash
-// ) =>
-//   batchModel.create({
-//     registrarId,
-//     creatorId,
-//     adminId,
-//     companyId,
-//     uniqueId,
-//     batchId,
-//     productId,
-//     productName,
-//     dynamicData,
-//     batchesUsed,
-//     batchNames,
-//     // fileUrls: uploadedDocFiles,
-//     imageUrl: uploadedImage,
-//     docDetails: uploadedDocFiles,
-//     activityStatus,
-//     transactionDetails: {
-//       transactionId: hash,
-//       blockNo: blockNumber,
-//       blockHash: blockHash,
-//     },
-//     Count: {
-//       typeCount: 'write',
-//       count: 1,
-//     },
-//   });
+
 export const saveBatchToDB = async (
   registrarId,
   creatorId,
@@ -98,7 +54,8 @@ export const saveBatchToDB = async (
   return batchModel.create(batchData);
 };
 
-export const findBatchFromDB = async (uniqueId) => batchModel.find({ uniqueId });
+export const findBatchFromDB = async (uniqueId) =>
+  batchModel.find({ uniqueId });
 export const getProductFromDB = async (uniqueId) => {
   try {
     const assetReadUpdate = await batchModel.findOneAndUpdate(
@@ -142,17 +99,11 @@ export const previewBatchToDB = async (
     productId,
     productName,
     dynamicData,
-    // batchesUsed,
-    // batchNames,
     imageUrl: uploadedImage,
     activityStatus,
     docDetails: uploadedDocFiles,
-    // $push: {
-    //   dynamicData: { $each: dynamicData },
     batchesUsed,
     batchNames,
-    //   docDetails: uploadedDocFiles,
-    // },
   };
 
   // Conditionally add the Count object if activityStatus is 'completed'
@@ -203,11 +154,3 @@ export const updateBatchToDB = async (
       runValidators: true,
     }
   );
-// export default {
-//   findProductName,
-//   saveBatchToDB,
-//   findBatchFromDB,
-//   getProductFromDB,
-//   updateBatchToDB,
-//   previewBatchToDB,
-// };

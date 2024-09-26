@@ -1,4 +1,4 @@
-import  { docHash } from '../utils/utilities.js';
+import { docHash } from '../utils/utilities.js';
 
 import {
   BlobServiceClient,

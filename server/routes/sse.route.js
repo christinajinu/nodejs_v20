@@ -1,6 +1,5 @@
 import express from 'express';
 const sseRouter = express.Router();
-// const sseRouter = require('express').Router();
 import {
   getLocationData,
   getAnalysisData,

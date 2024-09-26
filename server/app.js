@@ -1,9 +1,6 @@
 import 'dotenv/config';
-console.log(process.env.NODE_ENV); // Should log 'development' if set
-console.log(process.env.PRIVATE_KEY_AMOY);
 import express from 'express';
 import fileUpload from 'express-fileupload';
-// import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs';
@@ -14,7 +11,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const envPath = join(__dirname, '.env');
 const isDevelopment = process.env.NODE_ENV === 'development';
-// require('dotenv').config();
 
 if (isDevelopment && !fs.existsSync(envPath))
   throw new Error('Could not find .env file');

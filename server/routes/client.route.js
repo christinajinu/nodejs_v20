@@ -20,10 +20,6 @@ import {
 import express from 'express';
 const clientRouter = express.Router();
 import authenticator from '../middleware/auth.js';
-// clientRouter.route('/admin').post(
-//   // authenticator.admin,
-//   registerAdmin
-// );
 clientRouter.route('/addClient').post(authenticator.client, clientExist);
 
 clientRouter
